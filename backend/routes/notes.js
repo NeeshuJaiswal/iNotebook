@@ -9,7 +9,7 @@ const { findById, findByIdAndUpdate } = require('../models/Notes');
 // ROUTE 1:Get All the notes using : GET "/api/notes/fetchallnotes".login required
 router.get('/fetchallnotes', fetchuser, async (req, res) => {
     try {
-        const notes = await Notes.find({ user: req.user.id });
+        const notes = await Notes.find({user:req.user.id});
         res.json(notes);
     } catch (error) {
         console.error(error.message);
